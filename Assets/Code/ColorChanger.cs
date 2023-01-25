@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ColorChanger : MonoBehaviour
 {
-	public Color[] colors;
+	[SerializeField] private Color[] colors;
+
+	private SpriteRenderer spriteRenderer;
 
 	private void Awake()
 	{
-
+		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	// Start is called before the first frame update
@@ -23,6 +25,7 @@ public class ColorChanger : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-
+		int index = (int)Time.time % colors.Length;
+		spriteRenderer.color = colors[index];
 	}
 }
