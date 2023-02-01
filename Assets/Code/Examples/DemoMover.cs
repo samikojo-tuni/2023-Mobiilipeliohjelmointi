@@ -13,7 +13,7 @@ namespace Platformer2D
 		private float travelledSoFar = 0;
 
 		// Start is called before the first frame update
-		void Start()
+		private void Start()
 		{
 			// Normalisoi suuntavektori, eli tee siitä yhden mittainen.
 			// Tällöin se antaa liikkeelle vain suunnan eikä
@@ -22,7 +22,7 @@ namespace Platformer2D
 		}
 
 		// Update is called once per frame
-		void Update()
+		private void Update()
 		{
 			// Lasketaan liikevektori, eli se vektori, jonka kuljemme
 			// tämän framen ainana.

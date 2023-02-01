@@ -84,7 +84,7 @@ namespace Platformer2D
 
 			// Tulostaa jokaisella framella tiedon siitä, monesko frame suoritettiin.
 			// Tulos näkyy Unity:n consolessa.
-			Debug.Log(message);
+			//Debug.Log(message);
 		}
 	}
 }
