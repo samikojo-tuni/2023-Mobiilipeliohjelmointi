@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 3702294789
+    locked: 0
+  - name: Props
+    uniqueID: 2049888911
+    locked: 0
+  - name: Building
+    uniqueID: 1288207727
+    locked: 0
+  - name: Character
+    uniqueID: 3197591503
+    locked: 0
