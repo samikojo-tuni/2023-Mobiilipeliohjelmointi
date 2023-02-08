@@ -4,31 +4,33 @@ using UnityEngine;
 
 namespace Platformer2D
 {
-	public class Mover : MonoBehaviour
+	public class Mover : MonoBehaviour, IMover
 	{
 		[SerializeField]
 		private float speed = 1;
 
-		private InputReader inputReader;
-
-		private void Awake()
-		{
-			// Palauttaa viittauksen samassa GameObjectissa olevaan InputReader komponenttiin.
-			// Jos komponenttia ei löydy, GetComponent palauttaa null:in.
-			// https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html
-			inputReader = GetComponent<InputReader>();
-		}
+		private Vector2 direction;
 
 		private void Update()
 		{
-			Vector2 moveInput = inputReader.GetMoveInput();
-			Move(moveInput);
-		}
-
-		private void Move(Vector2 direction)
-		{
 			Vector2 movement = direction * speed * Time.deltaTime;
 			transform.Translate(movement);
+		}
+
+		public void Move(Vector2 direction)
+		{
+			this.direction = direction;
+		}
+
+		public float GetSpeed()
+		{
+			// Approximation of the speed. Make this more accurate if needed
+			if (direction.magnitude < 0.1f)
+			{
+				return 0;
+			}
+
+			return speed;
 		}
 	}
 }
