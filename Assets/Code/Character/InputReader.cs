@@ -15,6 +15,8 @@ namespace Platformer2D
 			Tap
 		}
 
+		private PlayerInput playerInput;
+
 		private ControlMethod currentControlMethod = ControlMethod.Tap;
 
 		// Tähän muuttujaan tallennetaan käyttäjän Move-actionia vastaava arvo.
@@ -23,8 +25,26 @@ namespace Platformer2D
 		// Piste pelimaailmassa, johon käyttäjä haluaa hahmon liikkuvan
 		private Vector3 worldTouchPosition;
 
+		private void Awake()
+		{
+			playerInput = GetComponent<PlayerInput>();
+		}
+
+		private void Start()
+		{
+			// HACK: Estä PlayerInputia vaihtamasta kontrolliskeemaa, jos virtual joystick on
+			// käytössä!
+			if (playerInput.currentActionMap.name == "Game")
+			{
+				// Jos VirtualJoystick on käytössä, estetään Unityä vaihtamasta kontrolliskeemaa
+				playerInput.neverAutoSwitchControlSchemes = true;
+				playerInput.SwitchCurrentControlScheme(Gamepad.current);
+			}
+		}
+
 		public void OnMove(InputAction.CallbackContext context)
 		{
+			currentControlMethod = ControlMethod.VirtualJoystick;
 			// Luetaan käyttäjän hahmoa liikuttava syöte muuttujaan.
 			moveInput = context.ReadValue<Vector2>();
 			Debug.Log($"Syöte: {moveInput}");
@@ -53,7 +73,7 @@ namespace Platformer2D
 		{
 			if (currentControlMethod == ControlMethod.VirtualJoystick)
 			{
-				return moveInput;
+				return this.moveInput;
 			}
 
 			Vector2 toTarget = (Vector3)(worldTouchPosition - transform.position);
@@ -64,6 +84,7 @@ namespace Platformer2D
 				return Vector2.zero;
 			}
 
+			// Tehdään vektorista yhden mittainen ja palautetaan se.
 			return toTarget.normalized;
 		}
 	}
