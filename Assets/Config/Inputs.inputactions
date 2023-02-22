@@ -83,6 +83,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "GameTouch",
+            "id": "653a9235-8aa7-486a-8e8c-375da962edd3",
+            "actions": [
+                {
+                    "name": "TapMove",
+                    "type": "Value",
+                    "id": "a205025e-3d85-4080-8cc3-0246cbbd9d3f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "088c4611-6cb6-493f-a05d-ea96d4b90ec4",
+                    "path": "<Touchscreen>/primaryTouch/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "TapMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

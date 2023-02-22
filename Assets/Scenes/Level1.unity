@@ -2955,8 +2955,63 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: GameTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: a205025e-3d85-4080-8cc3-0246cbbd9d3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: GameTouch/TapMove[/Simulated Touchscreen/primaryTouch/position]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1008195983}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTapMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Platformer2D.InputReader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316036244218536014, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+--- !u!114 &1008195983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3316036244218536015, guid: 07414622c4e0f324a99d0c4389ec5309, type: 3}
+  m_PrefabInstance: {fileID: 684886794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22625cf58515a0248b6e209113615b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1067259201
 GameObject:
   m_ObjectHideFlags: 0
