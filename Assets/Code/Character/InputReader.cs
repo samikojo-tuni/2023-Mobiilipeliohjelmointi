@@ -19,10 +19,10 @@ namespace Platformer2D
 
 		private ControlMethod currentControlMethod = ControlMethod.Tap;
 
-		// Tähän muuttujaan tallennetaan käyttäjän Move-actionia vastaava arvo.
+		// Tï¿½hï¿½n muuttujaan tallennetaan kï¿½yttï¿½jï¿½n Move-actionia vastaava arvo.
 		private Vector2 moveInput;
 
-		// Piste pelimaailmassa, johon käyttäjä haluaa hahmon liikkuvan
+		// Piste pelimaailmassa, johon kï¿½yttï¿½jï¿½ haluaa hahmon liikkuvan
 		private Vector3 worldTouchPosition;
 
 		private void Awake()
@@ -32,22 +32,26 @@ namespace Platformer2D
 
 		private void Start()
 		{
-			// HACK: Estä PlayerInputia vaihtamasta kontrolliskeemaa, jos virtual joystick on
-			// käytössä!
+			// HACK: Estï¿½ PlayerInputia vaihtamasta kontrolliskeemaa, jos virtual joystick on
+			// kï¿½ytï¿½ssï¿½!
 			if (playerInput.currentActionMap.name == "Game")
 			{
-				// Jos VirtualJoystick on käytössä, estetään Unityä vaihtamasta kontrolliskeemaa
+				// Jos VirtualJoystick on kï¿½ytï¿½ssï¿½, estetï¿½ï¿½n Unityï¿½ vaihtamasta kontrolliskeemaa
 				playerInput.neverAutoSwitchControlSchemes = true;
 				playerInput.SwitchCurrentControlScheme(Gamepad.current);
+			}
+			else
+			{
+				worldTouchPosition = transform.position;
 			}
 		}
 
 		public void OnMove(InputAction.CallbackContext context)
 		{
 			currentControlMethod = ControlMethod.VirtualJoystick;
-			// Luetaan käyttäjän hahmoa liikuttava syöte muuttujaan.
+			// Luetaan kï¿½yttï¿½jï¿½n hahmoa liikuttava syï¿½te muuttujaan.
 			moveInput = context.ReadValue<Vector2>();
-			Debug.Log($"Syöte: {moveInput}");
+			Debug.Log($"Syï¿½te: {moveInput}");
 		}
 
 		public void OnTapMove(InputAction.CallbackContext context)
@@ -56,7 +60,7 @@ namespace Platformer2D
 			{
 				currentControlMethod = ControlMethod.Tap;
 
-				// Lue täppäyksen koodrdinaatti näytöllä
+				// Lue tï¿½ppï¿½yksen koodrdinaatti nï¿½ytï¿½llï¿½
 				Vector2 touchPosition = context.ReadValue<Vector2>();
 
 				// Implisiittinen tyyppimuunnos, Vector2 muuttuu siis Vector3:ksi automaattisesti
@@ -64,7 +68,7 @@ namespace Platformer2D
 				// Vector3 screenCoordinate = new Vector3(touchPosition.x, touchPosition.y, 0);
 				Vector3 screenCoordinate = touchPosition;
 
-				// Koordinaattimuunnos näytön koordinaatista pelimaailman koordinaatistoon
+				// Koordinaattimuunnos nï¿½ytï¿½n koordinaatista pelimaailman koordinaatistoon
 				this.worldTouchPosition = Camera.main.ScreenToWorldPoint(screenCoordinate);
 			}
 		}
@@ -84,7 +88,7 @@ namespace Platformer2D
 				return Vector2.zero;
 			}
 
-			// Tehdään vektorista yhden mittainen ja palautetaan se.
+			// Tehdï¿½ï¿½n vektorista yhden mittainen ja palautetaan se.
 			return toTarget.normalized;
 		}
 	}
