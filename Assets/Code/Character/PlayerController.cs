@@ -7,27 +7,21 @@ using Platformer2D.InventorySystem.UI;
 
 namespace Platformer2D
 {
-	public class PlayerController : MonoBehaviour
+	public class PlayerController : CharacterBase
 	{
-		private const string AnimatorX = "Look X";
-		private const string AnimatorY = "Look Y";
-		private const string AnimatorSpeed = "Speed";
-
 		private static Inventory Inventory;
 
 		[SerializeField]
 		private float inventoryWeightLimit = 10;
 
 		private InputReader inputReader;
-		private IMover mover;
-		private Animator animator;
 		private InventoryUI inventoryUI;
 
-		private void Awake()
+		protected override void Awake()
 		{
+			base.Awake();
+
 			this.inputReader = GetComponent<InputReader>();
-			this.mover = GetComponent<IMover>();
-			this.animator = GetComponent<Animator>();
 
 			if (Inventory == null)
 			{
@@ -45,15 +39,8 @@ namespace Platformer2D
 		private void Update()
 		{
 			Vector2 movement = inputReader.GetMoveInput();
-			this.mover.Move(movement);
+			GetMover().Move(movement);
 			UpdateAnimator(movement);
-		}
-
-		private void UpdateAnimator(Vector2 movement)
-		{
-			this.animator.SetFloat(AnimatorX, movement.x);
-			this.animator.SetFloat(AnimatorY, movement.y);
-			this.animator.SetFloat(AnimatorSpeed, this.mover.GetSpeed());
 		}
 
 		private void OnTriggerEnter2D(Collider2D collision)

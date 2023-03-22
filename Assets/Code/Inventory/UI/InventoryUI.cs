@@ -106,5 +106,22 @@ namespace Platformer2D.InventorySystem.UI
 
 			return null;
 		}
+
+		public void Save()
+		{
+			inventory.Save();
+		}
+
+		public void Load()
+		{
+			inventory.Load();
+			UpdateInventory();
+		}
+
+		public void Clear()
+		{
+			inventory.Clear();
+			UpdateInventory();
+		}
 	}
 }
