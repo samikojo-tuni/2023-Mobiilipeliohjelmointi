@@ -7,9 +7,17 @@ namespace Platformer2D.InventorySystem
 		[SerializeField]
 		private Item item;
 
+		[SerializeField]
+		private ParticleSystem collectEffect;
+
 		public Item GetItem()
 		{
 			return item;
+		}
+
+		public ParticleSystem GetCollectEffect()
+		{
+			return collectEffect;
 		}
 	}
 }

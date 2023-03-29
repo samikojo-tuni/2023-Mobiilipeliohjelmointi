@@ -58,11 +58,45 @@ namespace Platformer2D
 			{
 				Debug.Log($"Item {item.GetItem().Name} collected!");
 
-				// TODO: Toista ääniefekti
-				// TODO: Toista visuaalinen efekti
+				// Toista ääniefekti
+				float delay = 0;
+
+				AudioSource audio = item.GetComponent<AudioSource>();
+				if (audio != null)
+				{
+					delay = audio.clip.length;
+					audio.Play();
+				}
+
+				// Piilota kerättävä esine
+				Renderer renderer = item.GetComponent<Renderer>();
+				if (renderer != null)
+				{
+					renderer.enabled = false;
+				}
+
+				// Estä myös uudet törmäykset esineen kanssa
+				Collider2D collider = item.GetComponent<Collider2D>();
+				if (collider != null)
+				{
+					collider.enabled = false;
+				}
+
+				// Toista visuaalinen efekti
+				ParticleSystem collectEffectPrefab = item.GetCollectEffect();
+				if (collectEffectPrefab != null)
+				{
+					ParticleSystem collectEffect = Instantiate(collectEffectPrefab,
+						item.transform.position, Quaternion.identity);
+
+					collectEffect.Play();
+
+					Destroy(collectEffect.gameObject, collectEffect.main.duration);
+				}
+
 				inventoryUI.UpdateInventory();
 
-				Destroy(item.gameObject);
+				Destroy(item.gameObject, delay);
 				return true;
 			}
 

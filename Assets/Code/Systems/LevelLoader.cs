@@ -13,10 +13,12 @@ namespace Platformer2D
 			None,
 			FadeIn,
 			LoadingScene,
-			FadeOut
+			FadeOut,
+			Options
 		}
 
 		public const string LoadingSceneName = "LoadingScene";
+		public const string OptionsSceneName = "Options";
 
 		// The current state of the level loader
 		private static LoadingState state = LoadingState.None;
@@ -29,6 +31,9 @@ namespace Platformer2D
 
 		// A reference to the loading scene
 		private static Scene loadingScene;
+
+		// A reference to the options scene
+		private static Scene optionsScene;
 
 		private Fader fader;
 
@@ -80,7 +85,24 @@ namespace Platformer2D
 						state = LoadingState.FadeOut;
 					}
 					break;
+				case LoadingState.Options:
+					optionsScene = loadedScene;
+					break;
 			}
+		}
+
+		public static void OpenOptions()
+		{
+			Time.timeScale = 0;
+			state = LoadingState.Options;
+			SceneManager.LoadSceneAsync(OptionsSceneName, LoadSceneMode.Additive);
+		}
+
+		public static void CloseOptions()
+		{
+			Time.timeScale = 1;
+			state = LoadingState.None;
+			SceneManager.UnloadSceneAsync(optionsScene);
 		}
 
 		public static void LoadLevel(string sceneName)
