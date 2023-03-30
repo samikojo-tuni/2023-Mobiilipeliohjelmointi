@@ -14,11 +14,13 @@ namespace Platformer2D
 			FadeIn,
 			LoadingScene,
 			FadeOut,
-			Options
+			Options,
+			Highscore,
 		}
 
 		public const string LoadingSceneName = "LoadingScene";
 		public const string OptionsSceneName = "Options";
+		public const string HighScoreSceneName = "HighScore";
 
 		// The current state of the level loader
 		private static LoadingState state = LoadingState.None;
@@ -34,6 +36,8 @@ namespace Platformer2D
 
 		// A reference to the options scene
 		private static Scene optionsScene;
+
+		private static Scene highscoreScene;
 
 		private Fader fader;
 
@@ -88,6 +92,9 @@ namespace Platformer2D
 				case LoadingState.Options:
 					optionsScene = loadedScene;
 					break;
+				case LoadingState.Highscore:
+					highscoreScene = loadedScene;
+					break;
 			}
 		}
 
@@ -103,6 +110,20 @@ namespace Platformer2D
 			Time.timeScale = 1;
 			state = LoadingState.None;
 			SceneManager.UnloadSceneAsync(optionsScene);
+		}
+
+		public static void OpenHighscore()
+		{
+			Time.timeScale = 0;
+			state = LoadingState.Highscore;
+			SceneManager.LoadSceneAsync(HighScoreSceneName, LoadSceneMode.Additive);
+		}
+
+		public static void CloseHighscore()
+		{
+			Time.timeScale = 1;
+			state = LoadingState.None;
+			SceneManager.UnloadSceneAsync(highscoreScene);
 		}
 
 		public static void LoadLevel(string sceneName)
