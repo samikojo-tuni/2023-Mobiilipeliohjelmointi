@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Texts_fi
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fi
+  m_SharedData: {fileID: 11400000, guid: 9abb5f18f610c451c8829aa12a7142f6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 284389531648
+    m_Localized: Tauko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 377767321600
+    m_Localized: "Enn\xE4tyspisteet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 500849172480
+    m_Localized: Tallenna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 532621025280
+    m_Localized: Lataa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 566892683264
+    m_Localized: "Tyhjenn\xE4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630696435712
+    m_Localized: Asetukset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 671100166144
+    m_Localized: "\xC4\xE4net"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 716067299328
+    m_Localized: Master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 884703485952
+    m_Localized: Musiikki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 942551326720
+    m_Localized: Efektit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1292922511360
+    m_Localized: Sulje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4996966899712
+    m_Localized: 'Paino: {0}/{1}, Arvo: {2}'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

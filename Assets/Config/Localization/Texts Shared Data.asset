@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Texts Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Texts
+  m_TableCollectionNameGuidString: 9abb5f18f610c451c8829aa12a7142f6
+  m_Entries:
+  - m_Id: 284389531648
+    m_Key: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 377767321600
+    m_Key: HighScore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 500849172480
+    m_Key: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 532621025280
+    m_Key: Load
+    m_Metadata:
+      m_Items: []
+  - m_Id: 566892683264
+    m_Key: Clear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630696435712
+    m_Key: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 671100166144
+    m_Key: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 716067299328
+    m_Key: Master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 884703485952
+    m_Key: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 942551326720
+    m_Key: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1292922511360
+    m_Key: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4996966899712
+    m_Key: InventoryWeight
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7056722185437839390
+  references:
+    version: 2
+    RefIds:
+    - rid: 7056722185437839390
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1682065156240

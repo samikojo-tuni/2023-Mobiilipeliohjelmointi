@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 namespace Platformer2D.InventorySystem.UI
 {
@@ -26,6 +29,8 @@ namespace Platformer2D.InventorySystem.UI
 		[SerializeField]
 		private TMP_Text infoText;
 
+		[SerializeField] private LocalizedString localizedWeight;
+
 		private InventoryUIItem[] items;
 		private Inventory inventory;
 
@@ -42,13 +47,29 @@ namespace Platformer2D.InventorySystem.UI
 			template.gameObject.SetActive(false);
 		}
 
+		private void OnEnable()
+		{
+			LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+		}
+
+		private void OnDisable()
+		{
+			LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+		}
+
+		private void OnLocaleChanged(Locale obj)
+		{
+			SetInfoText();
+		}
+
 		private void SetInfoText()
 		{
 			float weight = inventory.GetWeight();
 			float totalWeight = inventory.GetWeightLimit();
 			float value = inventory.GetValue();
 
-			infoText.text = $"Weight: {weight}/{totalWeight}, Value: {value}";
+			infoText.text = String.Format(localizedWeight.GetLocalizedString(), weight,
+				totalWeight, value);
 		}
 
 		private InventoryUIItem GetItem(ItemType type)

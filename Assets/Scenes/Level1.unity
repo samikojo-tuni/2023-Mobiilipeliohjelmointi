@@ -1181,6 +1181,18 @@ MonoBehaviour:
   template: {fileID: 1318139134}
   slots: 8
   infoText: {fileID: 1325942316}
+  localizedWeight:
+    m_TableReference:
+      m_TableCollectionName: GUID:9abb5f18f610c451c8829aa12a7142f6
+    m_TableEntryReference:
+      m_KeyId: 4996966899712
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &559463035
 MonoBehaviour:
   m_ObjectHideFlags: 0

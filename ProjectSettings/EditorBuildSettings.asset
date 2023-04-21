@@ -20,4 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Highscores.unity
     guid: bfb5598fe73d04e5ab950a9587eb24d2
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 635ce2ce228334a4ebcd2c96daa060d8, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: b79053f1d22a54d9e91cc4e0475bda74, type: 2}

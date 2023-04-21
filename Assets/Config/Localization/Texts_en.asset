@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Texts_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 9abb5f18f610c451c8829aa12a7142f6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 284389531648
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 377767321600
+    m_Localized: High score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 500849172480
+    m_Localized: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 532621025280
+    m_Localized: Load
+    m_Metadata:
+      m_Items: []
+  - m_Id: 566892683264
+    m_Localized: Clear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630696435712
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 671100166144
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 716067299328
+    m_Localized: Master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 884703485952
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 942551326720
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1292922511360
+    m_Localized: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4996966899712
+    m_Localized: 'Weight: {0}/{1}, Value: {2}'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
